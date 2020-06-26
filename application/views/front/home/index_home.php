@@ -1,154 +1,229 @@
-<section class="boot-elemant-bg py-md-5 py-4" style="background-color:darkblue;height: 500px; background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('assets/img/galery/bg.jpg');">
-    <div class="container position-relative py-md-5 py-0">
-        <div class="row">
-            <div class="container" style="position: absolute;">
-                <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <div class="text-right text-white">
-                            <h1><b>Example headline.</b></h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="elemant-bg-overlay black"></div>
-</section>
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center" style="background:#fff;">
 
-
-<section class="bg-white">
     <div class="container">
-
-        <div class="row">
-            <div class="card counter col-md-12">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <div style="font-size:50px;">9000</div>
-                                    Anak Yatim
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <div style="font-size:50px;font-weight:700;">40</div>
-                                    Cabang
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <div style="font-size:50px;">1200</div>
-                                    Aktifitas
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Kembangkan Bisnis Bersama Graha Studio</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Kami Siap membantu anda untuk menyediakan material Promosi secara Digital</h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
         </div>
-
-
-
-
-    </div>
-</section>
-
-
-<section class="bg-white">
-    <div class="container">
-        <div class="row">
-
-
-
-            <div class="col-md-8 p-md-5">
-                <h1> Rasulullah shallallahu
-                    ‘alaihi wa sallam
-                    bersabda</h1>
-                Sedekah dapat menghapus dosa
-                sebagaimana air memadamkan api.”
-                (HR. Tirmidzi, di shahihkan Al Albani
-                dalam Shahih At Tirmidzi, 614)
-            </div>
-            <div class="col-md-4 form-signup">
-                <div class="card">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Daftar jadi Donatur</h5>
-                        <hr>
-
-                        <?php
-                        echo form_open('auth/register')
-                        ?>
-                        <div class="form-group">
-                            <select class="form-control form-control-chosen" name="user_title" value="">
-                                <option value='Bapak'>Bapak</option>
-                                <option value='Ibu'>Ibu</option>
-                                <option value='Saudara'>Saudara</option>
-                                <option value='Saudari'>Saudari</option>
-
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="user_name" placeholder="Nama Lengkap" value="<?php echo set_value('user_name'); ?>">
-                            <?php echo form_error('user_name', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="user_phone" placeholder="Nomor Handphone" value="<?php echo set_value('user_phone'); ?>">
-                            <?php echo form_error('user_phone', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email Address" value="<?php echo set_value('email'); ?>">
-                            <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="password" class="form-control" name="password1" placeholder="Password">
-                                <?php echo form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="password" class="form-control" name="password2" placeholder="Repeat Password">
-
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Register Account
-                        </button>
-
-                        <?php echo form_close() ?>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="<?php echo base_url('auth/forgotpassword'); ?>">Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="<?php echo base_url('auth') ?>">Already have an account? Login!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="<?php echo base_url('assets/img/galery/home.png');?>" class="img-fluid animated" alt="">
         </div>
+      </div>
     </div>
-</section>
+
+  </section><!-- End Hero -->
+
+
+  <!-- ======= Counts Section ======= -->
+      <section id="counts" class="counts pt-5 section-bg">
+        <div class="container">
+
+          <div class="section-title" data-aos="fade-up">
+            <h2>About Us</h2>
+          </div>
+
+          <div class="row">
+            <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+              <img src="<?php echo base_url('assets/img/galery/about.svg');?>" alt="" class="img-fluid">
+            </div>
+
+            <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+              <div class="content d-flex flex-column justify-content-center">
+                <p>
+                  Graha Studio Adalah penyedia jasa layanan pemasaran digital secara online. Kami memahami kebutuhan anda bukan hanya di satu media, oleh karena itu kami hadir memberikan jawaban untuk anda yang ingin mempromosikan bisnis anda melalui berbagai media.
+                </p>
+              </div><!-- End .content-->
+            </div>
+          </div>
+
+        </div>
+      </section><!-- End Counts Section -->
+
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services">
+        <div class="container">
+
+          <div class="section-title" data-aos="fade-up">
+            <h2>Layanan</h2>
+            <p>Kami siap memberikan layanan terbaik untuk memenuhi kebutuhan anda</p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="ri-medal-line" style="color: #29cc61;"></i></div>
+                <h4 class="title"><a href="">Layanan terbaik</a></h4>
+                <p class="description">Kami akan memberikan layanan terbaik untuk anda</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="ri-customer-service-line" style="color: #47aeff;"></i></div>
+                <h4 class="title"><a href="">Konsultasi Gratis</a></h4>
+                <p class="description">Anda bisa berkonsultasi untuk pembuatan materi promosi secara gratis</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="bx bx-tachometer" style="color: #11dbcf;"></i></div>
+                <h4 class="title"><a href="">Fast Respons</a></h4>
+                <p class="description">Kami selalu siap untuk membantu anda dalam pelayanan kami</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="ri-stack-line"></i></div>
+                <h4 class="title"><a href="">Teknologi Baru</a></h4>
+                <p class="description">Dengan di dukung teknologi baru</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Services Section -->
+
+
+
+      <!-- ======= Features Section ======= -->
+      <section id="features" class="features">
+        <div class="container">
+
+          <div class="section-title" data-aos="fade-up">
+            <h2>Produk</h2>
+            <p>Kami Melayani jasa Material promosi Digital dengan media online dan media cetak</p>
+          </div>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <i class="ri-window-line" style="color: #ffbb2c;"></i>
+                <h3><a href="">Web Aplication</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="ri-code-box-line" style="color: #29cc61;"></i>
+                <h3><a href="">Web Custom</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="ri-android-line" style="color: #e80368;"></i>
+                <h3><a href="">Mobile Aplication</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+              <div class="icon-box">
+                <i class="ri-video-chat-line" style="color: #ff5828;"></i>
+                <h3><a href="">Video Editing</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box">
+                <i class="ri-brush-3-line" style="color: #47aeff;"></i>
+                <h3><a href="">Desain Grafis</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box">
+                <i class="ri-printer-line" style="color: #ffa76e;"></i>
+                <h3><a href="">Digital Printing</a></h3>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box">
+                <i class="ri-paint-brush-line" style="color: #b2904f;"></i>
+                <h3><a href="">Sablon</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box">
+                <i class="ri-quill-pen-line" style="color: #b20969;"></i>
+                <h3><a href="">Vector Art</a></h3>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Features Section -->
+
+
+
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team section-bg">
+        <div class="container">
+
+          <div class="section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+            <p>Contoh Hasil layanan jasa yang kami buat</p>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+
+                </div>
+                <div class="member-info">
+                  <h4>Walter White</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-img">
+                  <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+
+                </div>
+                <div class="member-info">
+                  <h4>Sarah Jhonson</h4>
+                  <span>Product Manager</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="300">
+                <div class="member-img">
+                  <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+
+                </div>
+                <div class="member-info">
+                  <h4>William Anderson</h4>
+                  <span>CTO</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="400">
+                <div class="member-img">
+                  <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+
+                </div>
+                <div class="member-info">
+                  <h4>Amanda Jepson</h4>
+                  <span>Accountant</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Team Section -->

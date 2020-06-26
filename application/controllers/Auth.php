@@ -149,29 +149,12 @@ class Auth extends CI_Controller
 		$config = [
 
 			'protocol' 		=> 'smtp',
-			'smtp_host' 	=> 'ssl://mail.eliterentcar.co.id',
+			'smtp_host' 	=> 'ssl://mail.site.com',
 			'smtp_port' 	=> 465,
-			'smtp_user' 	=> 'carbook@eliterentcar.co.id',
-			'smtp_pass' 	=> '0123456789/*',
+			'smtp_user' 	=> 'mail@site.com',
+			'smtp_pass' 	=> 'password',
 			'mailtype' 		=> 'html',
 			'charset' 		=> 'utf-8',
-
-			// 'protocol' 		=> 'smtp',
-			// 'smtp_host' 	=> 'ssl://smtp.googlemail.com',
-			// 'smtp_port' 	=> 465,
-			// 'smtp_user' 	=> 'aktivasigrahastudio@gmail.com',
-			// 'smtp_pass' 	=> '0123456789/*',
-			// 'mailtype' 		=> 'html',
-			// 'charset' 		=> 'utf-8',
-
-			// 'protocol'  => 'smtp',
-			// 'smtp_host' => 'ssl://smtp.googlemail.com',
-			// 'smtp_port' => 465,
-			// 'smtp_user' => 'design.atrans@gmail.com', // change it to yours
-			// 'smtp_pass' => 'atrans88', // change it to yours
-			// 'mailtype'  => 'html',
-			// 'charset'   => 'iso-8859-1',
-			// 'wordwrap'  => TRUE
 
 		];
 
@@ -180,16 +163,16 @@ class Auth extends CI_Controller
 
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('carbook@eliterentcar.co.id', 'Testing');
+		$this->email->from('mail@site.com', 'Testing');
 		$this->email->to($this->input->post('email'));
 
 		if ($type == 'verify') {
 			$this->email->subject('Account Verification');
-			$this->email->message('Silahkan Klik Link ini untuk mengaktivasi akun 
+			$this->email->message('Silahkan Klik Link ini untuk mengaktivasi akun
 			<a href=" ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ' ">Aktivasi</a>');
 		} elseif ($type == 'forgot') {
 			$this->email->subject('Reset Password');
-			$this->email->message('Silahkan Klik Link ini untuk Mereset Password 
+			$this->email->message('Silahkan Klik Link ini untuk Mereset Password
 			<a href=" ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ' ">Reset Password</a>');
 		}
 
