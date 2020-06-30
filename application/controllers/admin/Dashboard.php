@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('kas_model');
+        $this->load->model('berita_model');
 
         $id = $this->session->userdata('id');
         $user = $this->user_model->user_detail($id);
@@ -21,17 +21,14 @@ class Dashboard extends CI_Controller
 
 
         $list_user              = $this->user_model->listUser();
-        $total_pemasukan        = $this->kas_model->total_pemasukan();
-        $total_pengeluaran      = $this->kas_model->total_pengeluaran();
-        $kas                    = $this->kas_model->get_kas_dahsboard();
-        $perday                 = $this->kas_model->get_perday();
+        $berita                 = $this->berita_model->get_allberita();
+
+
         $data = [
             'title'             => 'Dashboard',
             'list_user'         => $list_user,
-            'total_pemasukan'   => $total_pemasukan,
-            'total_pengeluaran' => $total_pengeluaran,
-            'kas'               => $kas,
-            'perday'            => $perday,
+
+            'berita'            => $berita,
             'content'           => 'admin/dashboard/dashboard'
 
         ];

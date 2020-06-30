@@ -25,16 +25,18 @@ $meta = $this->meta_model->get_meta();
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="<?php echo base_url('assets/template/graha/assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/template/graha/assets/vendor/icofont/icofont.min.css');?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/template/graha/assets/vendor/remixicon/remixicon.css');?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/template/graha/assets/vendor/boxicons/css/boxicons.min.css');?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/template/graha/assets/vendor/owl.carousel/assets/owl.carousel.min.css');?>" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/icon/fontawesome5/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/icon/remixicon/remixicon.css">
+    <link rel="stylesheet" href="<?php echo base_url(''); ?>assets/template/css/component-chosen.css">
+    <link rel="stylesheet" href="<?php echo base_url(''); ?>assets/template/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="<?php echo base_url(''); ?>assets/template/css/timepicker.css" />
+    <link rel="stylesheet" href="<?php echo base_url(''); ?>assets/template/css/dataTables.bootstrap4.min.css" />
+  <!-- Font CSS File -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/fonts/open-sans/style.css">
 
-
-
-  <!-- Template Main CSS File -->
-  <link href="<?php echo base_url('assets/template/graha/assets/css/style.css');?>" rel="stylesheet">
 
 </head>
 

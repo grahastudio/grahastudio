@@ -39,7 +39,7 @@
                     <tr>
                         <td><?php echo $no; ?></td>
                         <td><?php echo $list_user->user_name; ?></td>
-                        <td><?php echo $list_user->role; ?></td>
+                        <td><?php echo $list_user->email; ?></td>
                         <td>
 
                             <?php if ($list_user->is_active == 1) : ?>
@@ -52,9 +52,9 @@
 
                         <td>
                             <?php if ($list_user->is_active == 0) : ?>
-                                <a class="btn btn-success btn-sm" href="<?php echo base_url('admin/seller/activated/' . $list_user->id); ?>"><i class="fas fa-user-times"></i> Activated</a>
+                                <a class="btn btn-success btn-sm" href="<?php echo base_url('admin/user/activated/' . $list_user->id); ?>"><i class="fas fa-user-times"></i> Activated</a>
                             <?php else : ?>
-                                <a class="btn btn-danger btn-sm" href="<?php echo base_url('admin/seller/banned/' . $list_user->id); ?>"><i class="fas fa-user-times"></i> Banned</a>
+                                <a class="btn btn-danger btn-sm" href="<?php echo base_url('admin/user/banned/' . $list_user->id); ?>"><i class="fas fa-user-times"></i> Banned</a>
 
                             <?php endif; ?>
 

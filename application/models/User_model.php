@@ -18,26 +18,12 @@ class User_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    public function get_cabang()
-    {
-        $this->db->select('user.*, user_role.role, asrama.asrama_name');
-        $this->db->from('user');
-        // join
-        $this->db->join('user_role', 'user_role.id = user.role_id', 'LEFT');
-        $this->db->join('asrama', 'asrama.id = user.asrama_id', 'LEFT');
-        // End Join
-        $this->db->where('role_id', 2);
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get();
-        return $query->result();
-    }
+
     public function user_detail()
     {
-        $this->db->select('user.*, asrama.asrama_name');
+        $this->db->select('*');
         $this->db->from('user');
-        // JOIN
-        $this->db->join('asrama', 'asrama.id = user.asrama_id', 'LEFT');
-        // END JOIN
+
         $this->db->where(array(
             'user.email'    => $this->session->userdata('email')
         ));
@@ -52,7 +38,7 @@ class User_model extends CI_Model
 
     // Dashboard
 
-    public function user_cabang()
+    public function user_member()
     {
         $this->db->select('*');
         $this->db->from('user');

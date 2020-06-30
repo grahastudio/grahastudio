@@ -5,8 +5,8 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Pemasukan</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?php echo number_format($total_pemasukan, '0', ',', '.'); ?></div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Berita</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($berita); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/pemasukan'); ?>" style="color:#333;text-decoration:none;">
                                 <span class="text-success mr-2"><i class="fas fa-arrow-right"></i> </span>
@@ -28,7 +28,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-uppercase mb-1">Pengeluaran</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?php echo number_format($total_pengeluaran, '0', ',', '.'); ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?php echo count($list_user); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/pengeluaran'); ?>" style="color:#333;text-decoration:none;">
                                 <span class="text-danger mr-2"><i class="fas fa-arrow-right"></i> </span>
@@ -51,8 +51,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-uppercase mb-1">Saldo Akhir</div>
                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                            <?php $saldo = $total_pemasukan - $total_pengeluaran; ?>
-                            Rp. <?php echo number_format($saldo, '0', ',', '.'); ?>
+                            dfdsf
                         </div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/kas'); ?>" style="color:#333;text-decoration:none;">
@@ -84,46 +83,24 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>Kategori</th>
-                            <th>Tipe</th>
-                            <th>Jumlah</th>
+                          
                             <!-- <th>Action</th> -->
 
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($kas as $kas) : ?>
+                        <?php foreach ($list_user as $list_user) : ?>
 
                             <tr>
-                            <tr>
-                                <td><?php echo date("d/m/Y", strtotime($kas->tanggal)); ?></td>
-                                <td><?php echo $kas->category_name; ?></td>
-                                <td>
-                                    <?php if ($kas->type == 'Pemasukan') : ?>
-                                        <span class="badge badge-success"><?php echo $kas->type; ?></span>
-                                    <?php else : ?>
-                                        <span class="badge badge-danger"><?php echo $kas->type; ?></span>
-                                    <?php endif; ?>
 
-                                </td>
-                                <td>
-                                    <?php if ($kas->type == "Pengeluaran") : ?>
-                                        <?php if ($kas->pengeluaran == NULL) : ?>
-                                            Rp. <?php echo "0"; ?>
-                                        <?php else : ?>
-                                            Rp. <?php echo number_format($kas->pengeluaran, '0', ',', '.'); ?>
-                                        <?php endif; ?>
-                                    <?php else : ?>
-                                        <?php if ($kas->nominal == NULL) : ?>
-                                            Rp. <?php echo "0"; ?>
-                                        <?php else : ?>
-                                            Rp. <?php echo number_format($kas->nominal, '0', ',', '.'); ?>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                </td>
+
+                                <td><?php echo $list_user->user_name; ?></td>
+
+
                                 <!-- <td><a href="<?php echo base_url('admin/dashboard/view/' . $kas->id); ?>" class="btn btn-primary btn-sm">Detail</a></td> -->
 
 
-                            </tr>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

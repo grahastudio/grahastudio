@@ -57,6 +57,15 @@
 
                     </div>
                     <div class="col-md-2">
+                        Bio
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <textarea class="form-control" name="user_bio" placeholder="Biografi"><?php echo $user->user_bio; ?></textarea>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
                         Alamat
                     </div>
                     <div class="col-md-9">
@@ -65,6 +74,43 @@
                             <?php echo form_error('user_phone', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
+
+                    <div class="col-md-2">
+                        Facebook Url
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="user_facebook" placeholder="Facebook Url" value="<?php echo $user->user_facebook; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        Twitter Url
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="user_twitter" placeholder="Twitter Url" value="<?php echo $user->user_twitter; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        Instagram Url
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="user_instagram" placeholder="Instagram Url" value="<?php echo $user->user_instagram; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        Youtube Url
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="user_youtube" placeholder="Youtube Url" value="<?php echo $user->user_youtube; ?>">
+                        </div>
+                    </div>
+
                     <div class="col-md-2">
 
                     </div>

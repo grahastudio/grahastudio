@@ -10,7 +10,7 @@ class Myaccount extends CI_Controller
         parent::__construct();
         $this->load->library('pagination');
         $this->load->model('user_model');
-        $this->load->model('kas_model');
+
     }
 
     //main page - Berita
@@ -18,14 +18,12 @@ class Myaccount extends CI_Controller
     {
         $id                         = $this->session->userdata('id');
         $user                       = $this->user_model->user_detail($id);
-        $total_pemasukan_user       = $this->kas_model->total_pemasukan_user($id);
-        $total_pengeluaran_user     = $this->kas_model->total_pengeluaran_user($id);
+
 
         // End Listing Berita dengan paginasi
         $data = array(
             'title'                     => 'Akun Saya',
-            'total_pemasukan_user'      => $total_pemasukan_user,
-            'total_pengeluaran_user'    => $total_pengeluaran_user,
+
             'user'                      => $user,
             'content'                   => 'admin/myaccount/index_account'
         );
@@ -103,12 +101,17 @@ class Myaccount extends CI_Controller
                         'email'                 => $this->input->post('email'),
                         'user_image'            => $upload_data['uploads']['file_name'],
                         'user_phone'            => $this->input->post('user_phone'),
+                        'user_bio'              => $this->input->post('user_bio'),
                         'user_address'          => $this->input->post('user_address'),
+                        'user_facebook'         => $this->input->post('user_facebook'),
+                        'user_twitter'          => $this->input->post('user_twitter'),
+                        'user_instagram'        => $this->input->post('user_instagram'),
+                        'user_youtube'          => $this->input->post('user_youtube'),
                         'date_updated'          => time()
                     ];
                     $this->user_model->update($data);
                     $this->session->set_flashdata('message', 'Data telah di Update');
-                    redirect(base_url('admin/home'), 'refresh');
+                    redirect(base_url('admin/myaccount'), 'refresh');
                 }
             } else {
                 //Update Berita Tanpa Ganti Gambar
@@ -119,12 +122,17 @@ class Myaccount extends CI_Controller
                         'user_name'             => $this->input->post('user_name'),
                         'email'                 => $this->input->post('email'),
                         'user_phone'            => $this->input->post('user_phone'),
+                        'user_bio'              => $this->input->post('user_bio'),
                         'user_address'          => $this->input->post('user_address'),
+                        'user_facebook'         => $this->input->post('user_facebook'),
+                        'user_twitter'          => $this->input->post('user_twitter'),
+                        'user_instagram'        => $this->input->post('user_instagram'),
+                        'user_youtube'          => $this->input->post('user_youtube'),
                         'date_updated'          => time()
                     ];
                 $this->user_model->update($data);
                 $this->session->set_flashdata('message', 'Profile telah di Update');
-                redirect(base_url('admin/home'), 'refresh');
+                redirect(base_url('admin/myaccount'), 'refresh');
             }
         }
 
@@ -172,7 +180,7 @@ class Myaccount extends CI_Controller
             ];
             $this->user_model->update($data);
             $this->session->set_flashdata('message', 'Password telah di ubah');
-            redirect(base_url('admin/home'), 'refresh');
+            redirect(base_url('admin/myaccount'), 'refresh');
         }
     }
 }

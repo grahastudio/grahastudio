@@ -61,7 +61,7 @@ class Auth extends CI_Controller
 					if ($user['role_id'] == 1) {
 						redirect('admin/dashboard');
 					} else {
-						redirect('admin/home');
+						redirect('myaccount');
 					}
 				} else {
 					//Password Salah

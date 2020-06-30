@@ -8,7 +8,7 @@ $meta = $this->meta_model->get_meta();
 
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center bg-gradient-primary" href="<?php echo base_url('admin/dashboard'); ?>">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('admin/dashboard'); ?>">
 
         <div class="sidebar-brand-icon">
             <i class="ti-lock"></i> </div>
@@ -32,24 +32,11 @@ $meta = $this->meta_model->get_meta();
         <div class="sidebar-heading">
             MASTER DATA
         </div>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/pemasukan'); ?>">
-                <i class="fa-fw ti-import text-success"></i>
-                <span>Pemasukan</span>
-            </a>
-        </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/pengeluaran'); ?>">
-                <i class="fa-fw ti-export text-danger"></i>
-                <span>Pengeluaran</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/kas'); ?>">
-                <i class="fa-fw ti-credit-card text-info"></i>
-                <span>Saldo</span>
+            <a class="nav-link" href="<?php echo base_url('admin/berita'); ?>">
+                <i class="fa-fw ti-bookmark-alt text-primary"></i>
+                <span>Blog</span>
             </a>
         </li>
 
@@ -60,15 +47,10 @@ $meta = $this->meta_model->get_meta();
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/asrama'); ?>">
-                <i class="fa-fw fas fa-store text-primary"></i>
-                <span>Asrama</span>
-            </a>
-        </li>
+
 
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/cabang'); ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/user'); ?>">
                 <i class="fa-fw fas fa-users text-primary"></i>
                 <span>User</span>
             </a>

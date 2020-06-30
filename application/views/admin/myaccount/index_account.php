@@ -11,7 +11,7 @@ if ($this->session->flashdata('message')) {
 ?>
 <div class="row">
     <!-- Basic Button -->
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <div class="card mb-4">
             <div class="card-body">
 
@@ -43,4 +43,37 @@ if ($this->session->flashdata('message')) {
             </div>
         </div>
     </div>
+
+
+    <div class="col-lg-9">
+        <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                  <label class="col-lg-3 col-form-label">Nama
+                  </label>
+                  <div class="col-lg-9">
+                      : <?php echo $user->user_name;?>
+                  </div>
+
+                  <label class="col-lg-3 col-form-label">Email
+                  </label>
+                  <div class="col-lg-9">
+                      : <?php echo $user->email;?>
+                  </div>
+
+                  <label class="col-lg-3 col-form-label">Biografi
+                  </label>
+                  <div class="col-lg-9">
+                      : <?php echo $user->user_bio;?>
+                  </div>
+                  
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </div>

@@ -10,7 +10,7 @@ $meta = $this->meta_model->get_meta();
 
 <!-- TopBar -->
 
-<nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top bg-gradient-primary" style="border-left:1px solid #3544a6;border-right:1px solid #3544a6;">
+<nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="border-left:1px solid #ee5343;border-right:1px solid #ee5343;">
 
     <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
         <i class="fa fa-bars"></i>

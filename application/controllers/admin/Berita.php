@@ -76,7 +76,7 @@ class Berita extends CI_Controller
     {
 
 
-        $category = $this->category_model->get_category();
+        $category = $this->category_model->get_category_blog();
         $this->form_validation->set_rules(
             'berita_title',
             'Judul Berita',
@@ -166,7 +166,7 @@ class Berita extends CI_Controller
     {
         $berita = $this->berita_model->berita_detail($id);
         //Validasi
-        $category = $this->category_model->get_category();
+        $category = $this->category_model->get_category_blog();
 
         //Validasi
         $valid = $this->form_validation;

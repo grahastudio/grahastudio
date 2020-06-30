@@ -9,6 +9,14 @@ class Berita_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
+    public function get_allberita()
+    {
+        $this->db->select('*');
+        $this->db->from('berita');
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function get_berita($limit, $start)
     {
         $this->db->select('berita.*,
@@ -99,7 +107,7 @@ class Berita_model extends CI_Model
     //Read Berita
     public function read($berita_slug)
     {
-        $this->db->select('berita.*,category.category_name, user.user_name');
+        $this->db->select('berita.*,category.category_name, user.user_name, user.user_image, user.user_bio');
         $this->db->from('berita');
         // Join
         $this->db->join('category', 'category.id = berita.category_id', 'LEFT');

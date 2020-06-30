@@ -23,7 +23,7 @@ class Category extends CI_Controller
         $this->form_validation->set_rules(
             'category_name',
             'Nama Kategori',
-            'required|is_unique[category.category_name]',
+            'required',
             array(
                 'required'         => '%s Harus Diisi',
                 'is_unque'         => '%s <strong>' . $this->input->post('category_name') .
@@ -38,10 +38,10 @@ class Category extends CI_Controller
             ];
             $this->load->view('admin/layout/wrapp', $data, FALSE);
         } else {
-
+            $slugcode = random_string('numeric', 5);
             $category_slug  = url_title($this->input->post('category_name'), 'dash', TRUE);
             $data  = [
-                'category_slug'     => $category_slug,
+                'category_slug'     => $slugcode . '-' .$category_slug,
                 'category_name'     => $this->input->post('category_name'),
                 'category_type'     => $this->input->post('category_type'),
                 'date_created'      => time()

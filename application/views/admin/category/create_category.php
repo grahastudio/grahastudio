@@ -28,9 +28,10 @@
                     </label>
 
                     <select name="category_type" class="form-control form-control-chosen">
-                        <option value="Berita">Berita</option>
-                        <option value="Donasi">Donasi</option>
-                        <option value="Pengeluaran">Pengeluaran</option>
+                        <option value="Blog">Blog</option>
+                        <option value="Product">Produk</option>
+                        <option value="Portfolio">Portfolio</option>
+                        <option value="Download">Download</option>
                     </select>
 
                 </div>
