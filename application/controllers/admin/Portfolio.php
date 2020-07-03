@@ -17,7 +17,7 @@ class Portfolio extends CI_Controller
             redirect('admin/home');
         }
     }
-    //listing data berita
+    //listing data portfolio
     public function index()
     {
         $config['base_url']       = base_url('admin/portfolio/index/');
@@ -68,12 +68,12 @@ class Portfolio extends CI_Controller
         ];
         $this->load->view('admin/layout/wrapp', $data, FALSE);
     }
-    //Create New Berita
+    //Create New Portfolio
     public function create()
     {
 
 
-        $category_portfolio = $this->category_model->get_category_portfolio();
+        $category = $this->category_model->get_category_portfolio();
         $this->form_validation->set_rules(
             'portfolio_title',
             'Judul Portfolio',
@@ -83,8 +83,8 @@ class Portfolio extends CI_Controller
             ]
         );
         $this->form_validation->set_rules(
-            'berita_desc',
-            'Deskripsi Berita',
+            'portfolio_desc',
+            'Deskripsi Portfolio',
             'required',
             [
                 'required'      => 'Deskripsi Portfolio harus di isi',
@@ -102,8 +102,8 @@ class Portfolio extends CI_Controller
 
                 //End Validasi
                 $data = [
-                    'title'                   => 'Tambah Berita',
-                    'category_portfolio'      => $category_portfolio,
+                    'title'                   => 'Tambah Portfolio',
+                    'category'      => $category,
                     'error_upload'            => $this->upload->display_errors(),
                     'content'                 => 'admin/portfolio/create_portfolio'
                 ];
@@ -143,27 +143,27 @@ class Portfolio extends CI_Controller
                     'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
                     'date_created'          => time()
                 ];
-                $this->berita_model->create($data);
+                $this->portfolio_model->create($data);
                 $this->session->set_flashdata('message', 'Data Portfolio telah ditambahkan');
                 redirect(base_url('admin/portfolio'), 'refresh');
             }
         }
         //End Masuk Database
         $data = [
-            'title'                   => 'Tambah Berita',
-            'category_portfolio'      => $category_portfolio,
+            'title'                   => 'Tambah Portfolio',
+            'category'      => $category,
             'content'                 => 'admin/portfolio/create_portfolio'
         ];
         $this->load->view('admin/layout/wrapp', $data, FALSE);
     }
 
 
-    //Edit Berita
+    //Edit Portfolio
     public function Update($id)
     {
         $portfolio = $this->portfolio_model->portfolio_detail($id);
         //Validasi
-        $category_portfolio = $this->category_model->get_category_portfolio();
+        $category = $this->category_model->get_category_portfolio();
 
         //Validasi
         $valid = $this->form_validation;
@@ -198,7 +198,7 @@ class Portfolio extends CI_Controller
                     //End Validasi
                     $data = [
                         'title'                   => 'Edit Portfolio',
-                        'category_portfolio'      => $category_portfolio,
+                        'category'                => $category,
                         'portfolio'               => $portfolio,
                         'error_upload'            => $this->upload->display_errors(),
                         'content'                 => 'admin/portfolio/update_portfolio'
@@ -229,9 +229,9 @@ class Portfolio extends CI_Controller
                     $this->image_lib->resize();
 
                     // Hapus Gambar Lama Jika Ada upload gambar baru
-                    if ($berita->berita_gambar != "") {
+                    if ($portfolio->portfolio_gambar != "") {
                         unlink('./assets/img/portfolio/' . $portfolio->portfolio_gambar);
-                        // unlink('./assets/img/artikel/thumbs/' . $berita->berita_gambar);
+                        // unlink('./assets/img/artikel/thumbs/' . $portfolio->portfolio_gambar);
                     }
                     //End Hapus Gambar
 
@@ -239,7 +239,7 @@ class Portfolio extends CI_Controller
                         'id'                    => $id,
                         'user_id'               => $this->session->userdata('id'),
                         'category_id'           => $this->input->post('category_id'),
-                        // 'berita_slug'        => url_title($this->input->post('berita_title'), 'dash', TRUE),
+                        // 'portfolio_slug'        => url_title($this->input->post('portfolio_title'), 'dash', TRUE),
                         'portfolio_title'       => $this->input->post('portfolio_title'),
                         'portfolio_desc'        => $this->input->post('portfolio_desc'),
                         'portfolio_gambar'      => $upload_data['uploads']['file_name'],
@@ -247,19 +247,19 @@ class Portfolio extends CI_Controller
                         'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
                         'date_updated'          => time()
                     ];
-                    $this->berita_model->update($data);
+                    $this->portfolio_model->update($data);
                     $this->session->set_flashdata('message', 'Data telah di Update');
                     redirect(base_url('admin/portfolio'), 'refresh');
                 }
             } else {
-                //Update Berita Tanpa Ganti Gambar
+                //Update Portfolio Tanpa Ganti Gambar
                 // Hapus Gambar Lama Jika ada upload gambar baru
-                if ($berita->berita_gambar != "")
+                if ($portfolio->portfolio_gambar != "")
                     $data  = [
                         'id'         => $id,
                         'user_id'           => $this->session->userdata('id'),
                         'category_id'       => $this->input->post('category_id'),
-                        // 'berita_slug'       => url_title($this->input->post('berita_title'), 'dash', TRUE),
+                        // 'portfolio_slug'       => url_title($this->input->post('portfolio_title'), 'dash', TRUE),
                         'portfolio_title'       => $this->input->post('portfolio_title'),
                         'portfolio_desc'        => $this->input->post('portfolio_desc'),
                         'portfolio_gambar'      => $upload_data['uploads']['file_name'],
@@ -267,15 +267,15 @@ class Portfolio extends CI_Controller
                         'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
                         'date_updated'          => time()
                     ];
-                $this->berita_model->update($data);
+                $this->portfolio_model->update($data);
                 $this->session->set_flashdata('message', 'Data telah di Update');
                 redirect(base_url('admin/portfolio'), 'refresh');
             }
         }
         //End Masuk Database
         $data = [
-            'title'        => 'Update Berita',
-            'category_portfolio'     => $category_portfolio,
+            'title'        => 'Update Portfolio',
+            'category'     => $category,
             'portfolio'       => $portfolio,
             'content'          => 'admin/portfolio/update_portfolio'
         ];
@@ -293,7 +293,7 @@ class Portfolio extends CI_Controller
 
         if ($portfolio->portfolio_gambar != "") {
             unlink('./assets/img/portfolio/' . $portfolio->portfolio_gambar);
-            // unlink('./assets/img/artikel/thumbs/' . $berita->berita_gambar);
+            // unlink('./assets/img/artikel/thumbs/' . $portfolio->portfolio_gambar);
         }
         //End Hapus Gambar
         $data = ['id'   => $portfolio->id];

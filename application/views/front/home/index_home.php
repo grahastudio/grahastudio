@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center" style="background:#fff;">
+<section id="hero" class="d-flex align-items-center banner-home" style="background:#fff;margin-top:70px;">
 
   <div class="container">
     <div class="row">

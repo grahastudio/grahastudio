@@ -56,5 +56,3 @@ $meta           = $this->meta_model->get_meta();
 
 
 
-
-<main id="main">

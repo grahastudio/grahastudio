@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 mx-auto" style="margin-top: 130px;">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->

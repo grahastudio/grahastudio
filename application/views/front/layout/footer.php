@@ -3,18 +3,6 @@ $meta      = $this->meta_model->get_meta();
 
 ?>
 
-
-
-<?php
-$meta      = $this->meta_model->get_meta();
-
-?>
-
-
-
-
-
-
 <section class="bantuan py-md-3 mt-md-5">
     <div class="container">
         <div class="row">
