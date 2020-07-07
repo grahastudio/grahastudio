@@ -1,19 +1,23 @@
 <?php if ($this->session->userdata('id')) : ?>
 
-    <div class="breadcrumb-default">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
-                <li class="breadcrumb-item active"><?php echo $title ?></li>
-            </ul>
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><?php echo $title ?></h2>
+          <ol>
+            <li><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
+            <li><?php echo $title ?></li>
+          </ol>
         </div>
-    </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
     <div class="margin-top container">
         <div class="row">
-            <div class="col-md-3">
 
-            </div>
 
             <div class="col-md-9">
                 <div class="card">
@@ -41,7 +45,7 @@
                                 <a href="<?php echo base_url('myaccount/update'); ?>" class="btn btn-primary btn-user ">
                                     Ubah Profile
                                 </a>
-                                <div class="row">
+                                <div class="row" style="line-height:40px;">
                                     <div class="col-3">
                                         Nama
                                     </div>
@@ -70,14 +74,9 @@
                                         Tanggal Join
                                     </div>
                                     <div class="col-9">
-                                        : Tanggal <?php echo date('d F Y', $user->date_created); ?>, Jam <?php echo date('h:i:s A', $user->date_created); ?>
+                                        :  <?php echo date('d F Y', $user->date_created); ?>, Jam <?php echo date('h:i:s A', $user->date_created); ?>
                                     </div>
-                                    <div class="col-3">
-                                        Last Update
-                                    </div>
-                                    <div class="col-9">
-                                        : Tanggal <?php echo date('d F Y', $user->date_updated); ?>, Jam <?php echo date('h:i:s A', $user->date_updated); ?>
-                                    </div>
+
                                 </div>
 
 
@@ -86,6 +85,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+
         </div>
     </div>
 

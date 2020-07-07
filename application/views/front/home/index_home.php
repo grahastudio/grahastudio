@@ -24,7 +24,7 @@
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">
-      <h2>About Us</h2>
+      <h2>Tentang Kami</h2>
     </div>
 
     <div class="row">
@@ -49,7 +49,7 @@
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">
-      <h2>Layanan</h2>
+      <h2>Keunggulan</h2>
       <p>Kami siap memberikan layanan terbaik untuk memenuhi kebutuhan anda</p>
     </div>
 
@@ -98,7 +98,7 @@
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">
-      <h2>Produk</h2>
+      <h2>Layanan</h2>
       <p>Kami Melayani jasa Material promosi Digital dengan media online dan media cetak</p>
     </div>
 
@@ -160,8 +160,8 @@
 
 
 
-<!-- ======= Team Section ======= -->
-<section id="team" class="team section-bg">
+
+<!-- <section id="team" class="team section-bg">
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">
@@ -218,4 +218,4 @@
     </div>
 
   </div>
-</section><!-- End Team Section -->
+</section> -->

@@ -1,19 +1,23 @@
 <?php if ($this->session->userdata('id')) : ?>
 
-    <div class="breadcrumb-default">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
-                <li class="breadcrumb-item active"><?php echo $title ?></li>
-            </ul>
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><?php echo $title ?></h2>
+          <ol>
+            <li><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
+            <li><?php echo $title ?></li>
+          </ol>
         </div>
-    </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
     <div class="margin-top container">
         <div class="row">
-            <div class="col-md-3">
 
-            </div>
 
             <div class="col-md-9">
                 <div class="card">
@@ -23,7 +27,7 @@
                     ?>
 
                     <div class="card-body">
-                        <h2>Ubah Password, <?php echo $user->user_name; ?></h2>
+                        <h2>Ubah Password</h2>
                         <hr>
 
                         <div class="row">
@@ -31,16 +35,26 @@
                             <div class="col-md-3">Password Baru</div>
                             <div class="col-md-9">
                                 <div class="form-group">
+                                  <div class="input-group input-group-lg mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ri-lock-line"></i> </span>
+                                    </div>
                                     <input type="password" class="form-control" name="password1" placeholder="Password">
                                     <?php echo form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
+                              </div>
                             </div>
 
                             <div class="col-md-3">Ulangi Password</div>
                             <div class="col-md-9">
                                 <div class="form-group">
+                                  <div class="input-group input-group-lg mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ri-lock-line"></i> </span>
+                                    </div>
                                     <input type="password" class="form-control" name="password2" placeholder="Repeat Password">
                                 </div>
+                              </div>
                             </div>
 
                             <div class="col-3">
@@ -56,6 +70,15 @@
                     <?php echo form_close(); ?>
                 </div>
             </div>
+
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+            
         </div>
     </div>
 

@@ -1,19 +1,23 @@
 <?php if ($this->session->userdata('id')) : ?>
 
-    <div class="breadcrumb-default">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
-                <li class="breadcrumb-item active"><?php echo $title ?></li>
-            </ul>
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><?php echo $title ?></h2>
+          <ol>
+            <li><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
+            <li><?php echo $title ?></li>
+          </ol>
         </div>
-    </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
     <div class="margin-top container">
         <div class="row">
-            <div class="col-md-3">
 
-            </div>
 
             <div class="col-md-9">
                 <div class="card">
@@ -23,17 +27,17 @@
                     ?>
 
                     <div class="card-body">
-                        <h2>Ubah Profile, <?php echo $user->user_name; ?></h2>
-
+                        <h3>Personal Info</h3>
+                        <hr>
                         <div class="row">
 
-                            <div class="col-3">
-                                Foto
+                            <div class="col-3 mb-3">
+                                <img src="<?php echo base_url('assets/img/avatars/' . $user->user_image); ?>" width="70%" class="img-fluid">
                             </div>
                             <div class="col-9">
                                 <div class="input-group">
                                     <input type="file" name="user_image">
-                                    <img src="<?php echo base_url('assets/img/avatars/' . $user->user_image); ?>" width="50%" class="img img-thumbnail">
+
                                 </div>
 
                             </div>
@@ -57,6 +61,60 @@
                                 </div>
 
                             </div>
+                            <div class="col-3">
+                                Biografi
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="user_bio" placeholder="Alamat"><?php echo $user->user_bio; ?></textarea>
+                                    <?php echo form_error('user_bio', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                            <h3>Sosial Media</h3>
+                            <hr>
+
+                            <div class="col-3">
+                                Facebook
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="user_facebook" placeholder="Url Facebook" value="<?php echo $user->user_facebook; ?>">
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                Instagram
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="user_instagram" placeholder="Url Instagram" value="<?php echo $user->user_instagram; ?>">
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                Youtube
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="user_youtube" placeholder="Url Youtube" value="<?php echo $user->user_youtube; ?>">
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                Twitter
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="user_twitter" placeholder="Url Twitter" value="<?php echo $user->user_twitter; ?>">
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                            <h3>Customer Info</h3>
+                            <hr>
+                          </div>
                             <div class="col-3">
                                 Phone
                             </div>
@@ -89,6 +147,16 @@
                     <?php echo form_close(); ?>
                 </div>
             </div>
+          </div>
+
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+
         </div>
     </div>
 

@@ -7,7 +7,7 @@ $meta      = $this->meta_model->get_meta();
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-light"><span style="font-size:35px;font-weight:700;">Butuh Bantuan ? Hubungi Kami</span></div>
-            <div class="col-md-4 text-light"><span style="font-size:30px;font-weight:700;"><i class="fas fa-phone"></i> <?php echo $meta->telepon; ?></span></div>
+            <div class="col-md-4 text-light"><span style="font-size:30px;font-weight:700;"><i class="ri-whatsapp-line"></i>  <?php echo $meta->telepon; ?></span></div>
         </div>
     </div>
 </section>
@@ -25,9 +25,9 @@ $meta      = $this->meta_model->get_meta();
                 <h5>Produk Utama</h5>
                 <ul class="list-unstyled text-small">
 
-                    <li><a class="text-muted" href="#sec1">Foshand</a></li>
-                    <li><a class="text-muted" href="#sec2">Alcohol 70%</a></li>
-                    <li><a class="text-muted" href="#sec3">fosdes 1420</a></li>
+                    <li><a class="text-muted" href="#">Jasa Website</a></li>
+                    <li><a class="text-muted" href="#">Jasa Desain Grafis</a></li>
+                    <li><a class="text-muted" href="#">Jasa Video Animasi</a></li>
 
                 </ul>
             </div>
@@ -36,12 +36,19 @@ $meta      = $this->meta_model->get_meta();
                 <ul class="list-unstyled text-small">
                     <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
                     <li><a class="text-muted" href="<?php echo base_url('contact') ?>">Contact Us</a></li>
-                    <li><a class="text-muted" href="<?php echo base_url('products') ?>">Produk</a></li>
-                    <li><a class="text-muted" href="<?php echo base_url('berita') ?>">Berita</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url('blog') ?>">Blog</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
+            <h5>Layanan</h5>
+                <ul class="list-unstyled text-small">
 
+                    <li><a class="text-muted" href="#">Web Application</a></li>
+                    <li><a class="text-muted" href="#">Web System</a></li>
+                    <li><a class="text-muted" href="#">Video Editing</a></li>
+                    <li><a class="text-muted" href="#">Desain Grafis</a></li>
+
+                </ul>
             </div>
         </div>
     </div>
@@ -159,6 +166,17 @@ function scrollFunction() {
   }
 }
 </script>
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
 

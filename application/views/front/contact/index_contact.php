@@ -1,13 +1,19 @@
-<div class="breadcrumb-default">
+<!-- ======= Breadcrumbs Section ======= -->
+<section class="breadcrumbs">
     <div class="container">
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
-            <li class="breadcrumb-item active"><?php echo $title ?></li>
-        </ul>
-    </div>
-</div>
 
-<div class="margin-top container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2><?php echo $title ?></h2>
+        <ol>
+          <li><a href="<?php echo base_url('') ?>"><i class="ti ti-home"></i> Home</a></li>
+          <li><?php echo $title ?></li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+
+<div class="container">
     <div class="col-md-9">
         <div class="card">
             <div class="card-body">

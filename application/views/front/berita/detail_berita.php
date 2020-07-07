@@ -33,7 +33,7 @@
             <div class="entry-meta">
               <ul>
                 <li class="d-flex align-items-center"><i class="ri-user-3-line"></i> <a href="blog-single.html"><?php echo $berita->user_name; ?></a></li>
-                <li class="d-flex align-items-center"><i class="ri-calendar-line"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                <li class="d-flex align-items-center"><i class="ri-calendar-line"></i> <a href="blog-single.html"><?php echo date('d F Y', $berita->date_created);?></a></li>
                 <li class="d-flex align-items-center"><i class="ri-eye-line"></i> <a href="blog-single.html"><?php echo $berita->berita_views; ?> View</a></li>
               </ul>
             </div>
@@ -42,6 +42,9 @@
               <p>
 <?php echo $berita->berita_desc; ?>
               </p>
+
+              <!-- Your share button code -->
+  
 
             </div>
 
@@ -56,9 +59,17 @@
               </div>
 
               <div class="float-right share">
-                <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
-                <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
-                <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+                <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_line"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
               </div>
 
             </div>
@@ -82,56 +93,7 @@
 
         </div>
         <div class="col-md-3">
-          <div class="sidebar card">
-            <h3 class="sidebar-title">Search</h3>
-            <div class="sidebar-item search-form">
-              <form action="">
-                <input type="text">
-                <button type="submit"><i class="icofont-search"></i></button>
-              </form>
-
-            </div><!-- End sidebar search formn-->
-
-            <h3 class="sidebar-title">Categories</h3>
-            <div class="sidebar-item categories">
-              <ul>
-                <li><a href="#">General <span>(25)</span></a></li>
-                <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                <li><a href="#">Travel <span>(5)</span></a></li>
-                <li><a href="#">Design <span>(22)</span></a></li>
-                <li><a href="#">Creative <span>(8)</span></a></li>
-                <li><a href="#">Educaion <span>(14)</span></a></li>
-              </ul>
-
-            </div><!-- End sidebar categories-->
-
-            <h3 class="sidebar-title">Recent Posts</h3>
-            <div class="sidebar-item recent-posts">
-              <div class="post-item clearfix">
-                <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                <time datetime="2020-01-01">Jan 1, 2020</time>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                <time datetime="2020-01-01">Jan 1, 2020</time>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                <time datetime="2020-01-01">Jan 1, 2020</time>
-              </div>
-
-
-
-            </div><!-- End sidebar recent posts-->
-
-
-
-          </div><!-- End sidebar -->
+        <?php include "blog_sidebar.php";?>
         </div>
       </div>
 

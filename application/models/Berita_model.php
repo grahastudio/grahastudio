@@ -31,6 +31,20 @@ class Berita_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function recent_post()
+    {
+        $this->db->select('berita.*,
+                       category.category_name, user.user_name');
+        $this->db->from('berita');
+        // Join
+        $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
+        $this->db->join('user', 'user.id = berita.user_id', 'LEFT');
+        //End Join
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit(3);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     //Total Berita Main Page
     public function total_row()
@@ -121,6 +135,38 @@ class Berita_model extends CI_Model
         $query = $this->db->get();
         return $query->row();
     }
+
+ 
+    //listing Category Berita
+  public function berita_category($category_id,$limit,$start)
+  {
+    $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name');
+    $this->db->from('berita');
+    // Join
+    $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
+    $this->db->join('user', 'user.id = berita.user_id', 'LEFT');
+    //End Join
+    $this->db->where(array( 'berita_status'           =>  'publish',
+                            'berita.category_id'      =>  $category_id));
+    $this->db->order_by('berita.id','DESC');
+    $this->db->limit($limit,$start);
+    $query = $this->db->get();
+    return $query->result();
+  }
+  public function total_category($category_id)
+  {
+    $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name');
+    $this->db->from('berita');
+    // Join
+    $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
+    $this->db->join('user', 'user.id = berita.user_id', 'LEFT');
+    //End Join
+    $this->db->where(array( 'berita_status'           =>  'publish',
+                            'berita.category_id'      =>  $category_id));
+    $this->db->order_by('berita.id','DESC');
+    $query = $this->db->get();
+    return $query->result();
+  }
 
     function update_counter($berita_slug)
     {

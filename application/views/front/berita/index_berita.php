@@ -22,13 +22,16 @@
 
   <?php foreach ($berita as $berita) : ?>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="card">
-            <img src="<?php echo base_url('assets/img/artikel/' . $berita->berita_gambar); ?>" class="card-img-top" alt="...">
+            <img src="<?php echo base_url('assets/img/artikel/' . $berita->berita_gambar); ?>" class="card-img-top" alt="<?php echo $berita->berita_title; ?>">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $berita->berita_title; ?></h5>
-
-              <a href="<?php echo base_url('blog/detail/' . $berita->berita_slug); ?>" class="btn btn-primary">Go somewhere</a>
+              <h2 class="index-title"><a href="<?php echo base_url('blog/detail/' . $berita->berita_slug); ?> "> <?php echo substr($berita->berita_title, 0, 25); ?></a></h2>
+              <p><?php echo substr($berita->berita_desc, 0, 100); ?></p>
+             
+            </div>
+            <div class="card-footer">
+            <i class="ri-price-tag-3-line"></i> <?php echo $berita->category_name; ?>
             </div>
           </div>
         </div>
@@ -45,55 +48,7 @@
 
 
       <div class="col-md-3">
-        <div class="sidebar card">
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
-                  <button type="submit"><i class="icofont-search"></i></button>
-                </form>
-
-              </div><!-- End sidebar search formn-->
-
-              <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-
-              </div><!-- End sidebar categories-->
-
-              <h3 class="sidebar-title">Recent Posts</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-
-
-              </div><!-- End sidebar recent posts-->
-
-
-
+        <?php include "blog_sidebar.php";?>
             </div><!-- End sidebar -->
       </div>
     </div>

@@ -20,9 +20,8 @@ $meta           = $this->meta_model->get_meta();
 
 <ul class="navbar-nav">
 	<li class="nav-item active"> <a class="nav-link" href="<?php echo base_url();?>">Home </a> </li>
-	<li class="nav-item"><a class="nav-link" href="#"> Tentang </a></li>
-	<li class="nav-item"><a class="nav-link" href="#"> Layanan </a></li>
-  <li class="nav-item"><a class="nav-link" href="#"> Portfolio </a></li>
+	<li class="nav-item"><a class="nav-link" href="<?php echo base_url('about');?>"> Tentang </a></li>
+  <li class="nav-item"><a class="nav-link" href="<?php echo base_url('contact');?>"> Hubungi Kami </a></li>
   <li class="nav-item"><a class="nav-link" href="<?php echo base_url('blog');?>"> Blog </a></li>
 </ul>
 
@@ -35,14 +34,14 @@ $meta           = $this->meta_model->get_meta();
                             <i class="ti-user"></i> <?php echo $user->user_name; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url('myaccount') ?>">My Account</a>
+                            <a class="dropdown-item" href="<?php echo base_url('myaccount') ?>"><i class="ti-user"></i> My Account</a>
 
-                            <a class="dropdown-item" href="<?php echo base_url('myaccount/ubah_password'); ?>">Setings</a>
+                            <a class="dropdown-item" href="<?php echo base_url('myaccount/ubah_password'); ?>"><i class="ti-lock"></i> Ubah Password</a>
                             <div class="dropdown-divider"></div>
                             <?php if ($user->role_id == 1) : ?>
                                 <a class="dropdown-item" href="<?php echo base_url('admin/dashboard'); ?>">Panel Admin</a>
                             <?php endif; ?>
-                            <a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Logout</a>
+                            <a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>"><i class="ti-power-off"></i> Logout</a>
                         </div>
                     </li>
                 <?php } else { ?>
@@ -53,6 +52,3 @@ $meta           = $this->meta_model->get_meta();
   </div> <!-- navbar-collapse.// -->
   </div>
 </nav>
-
-
-
