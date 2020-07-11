@@ -1,4 +1,9 @@
-<!-- ======= Breadcrumbs Section ======= -->
+<?php
+$meta = $this->meta_model->get_meta();
+// error_reporting(0);
+// ini_set('display_errors', 0);
+?>
+<!--  Breadcrumbs Section -->
 <section class="breadcrumbs">
     <div class="container">
 
@@ -18,14 +23,34 @@
         <div class="card">
             <div class="card-body">
                 <h2>Contact Us</h2>
-                <p>Untuk Informasi dan Pemesanan Silahkan Hubungi Kami melalui</p>
-                <ul>
-                    <li>
-                        <i class="ti-home"></i> Head Office : Jl. Pondok Jagung Timur No. 46, Kelurahan Pondok jagung timur, kec.
-                        Serpong Utara - Tangerang Selatan - banten - Indonesia, 15326.</li>
-                    <li><i class="fa fa-phone"></i> Telp. No : +62 21 53133583</li>
-                    <li><i class=" ti-printer"></i> Fax. No : +62 21 53133583</li>
-                </ul>
+                <p><?php echo $meta->description;?></p>
+                
+                    <div class="row">
+
+                      <div class="col-md-2 col-2">
+                          <i class="ri-building-line"></i>
+                      </div>
+                      <div class="col-md-10 col-10">
+                         <?php echo $meta->alamat;?>
+                      </div>
+
+                      <div class="col-md-2 col-2">
+                          <i class="ri-whatsapp-line"></i>
+                      </div>
+                      <div class="col-md-10 col-10">
+                         <?php echo $meta->telepon;?>
+                      </div>
+
+                      <div class="col-md-2 col-2">
+                      <i class="ri-mail-send-line"></i>
+                      </div>
+                      <div class="col-md-10 col-10">
+                         <?php echo $meta->email;?>
+                      </div>
+                    
+
+                    </div>
+                
             </div>
         </div>
     </div>

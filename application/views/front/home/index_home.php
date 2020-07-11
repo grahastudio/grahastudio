@@ -7,11 +7,11 @@
         <h1 data-aos="fade-up">Kembangkan Bisnis Bersama Graha Studio</h1>
         <h2 data-aos="fade-up" data-aos-delay="400">Kami Siap membantu anda untuk menyediakan material Promosi secara Digital</h2>
         <div data-aos="fade-up" data-aos-delay="800">
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <a href="#layanan" class="btn-get-started scrollto">Apa yang anda butuhkan</a>
         </div>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-        <img src="<?php echo base_url('assets/img/galery/home.png');?>" class="img-fluid animated" alt="">
+        <img src="<?php echo base_url('assets/img/galery/hero.svg');?>" class="img-fluid animated" alt="">
       </div>
     </div>
   </div>
@@ -34,6 +34,9 @@
 
       <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
         <div class="content d-flex flex-column justify-content-center">
+          <p>Dengan Semakin berkembangnya teknologi, terutama internet, sebagai perusahaan yang sedang berkembang tentu tidak ingin tertinggal, selain menggunakan offline marketing sebagai tombak utama, marketing online bisa terbilang sejajar bahkan mungkin
+            trend saat ini marting online sangat di sarankan.
+          </p>
           <p>
             Graha Studio Adalah penyedia jasa layanan pemasaran digital secara online. Kami memahami kebutuhan anda bukan hanya di satu media, oleh karena itu kami hadir memberikan jawaban untuk anda yang ingin mempromosikan bisnis anda melalui berbagai media.
           </p>
@@ -72,7 +75,7 @@
 
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon"><i class="bx bx-tachometer" style="color: #11dbcf;"></i></div>
+          <div class="icon"><i class="ri-mail-send-line" style="color: #11dbcf;"></i></div>
           <h4 class="title"><a href="">Fast Respons</a></h4>
           <p class="description">Kami selalu siap untuk membantu anda dalam pelayanan kami</p>
         </div>
@@ -94,7 +97,7 @@
 
 
 <!-- ======= Features Section ======= -->
-<section id="features" class="features">
+<section id="layanan" class="features">
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">

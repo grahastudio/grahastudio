@@ -32,9 +32,9 @@
 
             <div class="entry-meta">
               <ul>
-                <li class="d-flex align-items-center"><i class="ri-user-3-line"></i> <a href="blog-single.html"><?php echo $berita->user_name; ?></a></li>
-                <li class="d-flex align-items-center"><i class="ri-calendar-line"></i> <a href="blog-single.html"><?php echo date('d F Y', $berita->date_created);?></a></li>
-                <li class="d-flex align-items-center"><i class="ri-eye-line"></i> <a href="blog-single.html"><?php echo $berita->berita_views; ?> View</a></li>
+                <li class="d-flex align-items-center"><i class="ri-user-3-line"></i> <?php echo $berita->user_name; ?></li>
+                <li class="d-flex align-items-center"><i class="ri-calendar-line"></i> <?php echo date('d F Y', $berita->date_created);?></li>
+                <li class="d-flex align-items-center"><i class="ri-eye-line"></i> <?php echo $berita->berita_views; ?> View</li>
               </ul>
             </div>
 
@@ -44,7 +44,7 @@
               </p>
 
               <!-- Your share button code -->
-  
+
 
             </div>
 
@@ -52,7 +52,7 @@
               <div class="float-left">
                 <i class="ri-price-tag-3-line"></i>
                 <ul class="cats">
-                  <li><a href="#"><?php echo $berita->category_name;?></a></li>
+                  <li><a href="<?php echo base_url('blog/category/'.$berita->category_slug);?>"><?php echo $berita->category_name;?></a></li>
                 </ul>
 
 

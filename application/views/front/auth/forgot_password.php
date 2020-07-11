@@ -16,11 +16,11 @@
           echo form_open('auth/forgotpassword', $attributes)
           ?>
           <div class="form-group">
-            <div class="input-group input-group-lg mb-3">
+            <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ri-mail-send-line"></i> </span>
               </div>
-              <input type="text" class="form-control form-control-rounded" name="email" id="email" placeholder="Enter Email Address..." value="<?php echo set_value('email'); ?>">
+              <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email Address..." value="<?php echo set_value('email'); ?>">
               <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
           </div>

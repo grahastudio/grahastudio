@@ -92,7 +92,7 @@ class Berita_model extends CI_Model
     //listing Berita Main Page
     public function berita($limit, $start)
     {
-        $this->db->select('berita.*,category.category_name, user.user_name');
+        $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name');
         $this->db->from('berita');
         // Join
         $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -121,7 +121,7 @@ class Berita_model extends CI_Model
     //Read Berita
     public function read($berita_slug)
     {
-        $this->db->select('berita.*,category.category_name, user.user_name, user.user_image, user.user_bio');
+        $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name, user.user_image, user.user_bio');
         $this->db->from('berita');
         // Join
         $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -136,7 +136,7 @@ class Berita_model extends CI_Model
         return $query->row();
     }
 
- 
+
     //listing Category Berita
   public function berita_category($category_id,$limit,$start)
   {

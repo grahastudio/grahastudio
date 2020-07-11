@@ -9,6 +9,7 @@
 
     </div>
     <div class="card-body">
+      <a class="btn btn-success" href="<?php echo base_url('admin/user/create');?>">Create</a>
         <?php
         //Notifikasi
         if ($this->session->flashdata('message')) {
@@ -28,7 +29,8 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Username</th>
                         <th>Status</th>
 
                         <th width="25%">Action</th>
@@ -40,6 +42,7 @@
                         <td><?php echo $no; ?></td>
                         <td><?php echo $list_user->user_name; ?></td>
                         <td><?php echo $list_user->email; ?></td>
+                        <td><?php echo $list_user->username; ?></td>
                         <td>
 
                             <?php if ($list_user->is_active == 1) : ?>
@@ -71,12 +74,14 @@
                 }; ?>
             </table>
 
-            <div class="pagination col-md-12 text-center">
-                <?php if (isset($pagination)) {
-                    echo $pagination;
-                } ?>
-            </div>
 
+
+        </div>
+        <br>
+        <div class="pagination col-md-12 text-center">
+            <?php if (isset($pagination)) {
+                echo $pagination;
+            } ?>
         </div>
 
     </div>

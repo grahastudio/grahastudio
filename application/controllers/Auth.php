@@ -30,7 +30,9 @@ class Auth extends CI_Controller
 		);
 		if ($this->form_validation->run() == false) {
 			$data = [
-				'title' 		=> 'User Login',
+				'title' 				=> 'User Login',
+				'deskripsi'     => 'Halaman Login Member area Graha studio',
+				'keywords'      => 'Graha Studio, Login Member',
 				'content'       => 'front/auth/login'
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
@@ -111,16 +113,21 @@ class Auth extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$data = [
-				'title'			=> 'Register Donatur',
+				'title'					=> 'Register Donatur',
+				'deskripsi'     => 'Halaman Pendaftaran Member  Graha studio',
+				'keywords'      => 'Graha Studio, Daftar Member',
 				'content'       => 'front/auth/register'
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
 		} else {
+
 			$email = $this->input->post('email', true);
+			$username = substr($email, 0, strpos($email, '@'));
 			$data = [
 				'user_title'	=> $this->input->post('user_title'),
 				'user_name' 	=> htmlspecialchars($this->input->post('user_name', true)),
-				'email' 		=> htmlspecialchars($email),
+				'email' 			=> htmlspecialchars($email),
+				'username'		=> $username,
 				'user_image' 	=> 'default.jpg',
 				'user_phone'	=> $this->input->post('user_phone'),
 				'password'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
@@ -232,6 +239,8 @@ class Auth extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$data = [
 				'title'		=> 'Forgot Password',
+				'deskripsi'     => 'Halaman Lupa Password  Graha studio',
+				'keywords'      => 'Graha Studio, Lupa Password',
 				'content'	=> 'front/auth/forgot_password'
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
@@ -295,8 +304,10 @@ class Auth extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$data = [
-				'title'		=> 'Change Password',
-				'content'	=> 'front/auth/change_password'
+				'title'					=> 'Change Password',
+				'deskripsi'     => 'Reset Password Graha studio',
+				'keywords'      => 'Graha Studio, Reset Password',
+				'content'				=> 'front/auth/change_password'
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
 		} else {

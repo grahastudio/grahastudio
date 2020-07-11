@@ -28,10 +28,10 @@
             <div class="card-body">
               <h2 class="index-title"><a href="<?php echo base_url('blog/detail/' . $berita->berita_slug); ?> "> <?php echo substr($berita->berita_title, 0, 25); ?></a></h2>
               <p><?php echo substr($berita->berita_desc, 0, 100); ?></p>
-             
+
             </div>
             <div class="card-footer">
-            <i class="ri-price-tag-3-line"></i> <?php echo $berita->category_name; ?>
+            <i class="ri-price-tag-3-line"></i> <a href="<?php echo base_url('blog/category/'.$berita->category_slug);?>"><?php echo $berita->category_name; ?></a>
             </div>
           </div>
         </div>

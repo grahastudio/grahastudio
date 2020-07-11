@@ -116,7 +116,7 @@
                 <h6 class="m-0 font-weight-bold text-light">Title</h6>
             </div>
             <div>
-                <!-- <div class="customer-message align-items-center">
+                <div class="customer-message align-items-center">
                     <a class="font-weight-bold" href="#">
                         <div class="text-truncate message-title">Hi there! I am wondering if you can help me with a
                             problem I've been having.</div>
@@ -147,7 +147,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <a class="m-0 small text-primary card-link" href="#">View More <i class="fas fa-chevron-right"></i></a>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

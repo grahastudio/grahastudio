@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller
     {
 
 
-        $list_user              = $this->user_model->listUser();
+        $list_user              = $this->user_model->user_dashboard();
         $berita                 = $this->berita_model->get_allberita();
 
 

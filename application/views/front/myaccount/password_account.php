@@ -33,9 +33,9 @@
                         <div class="row">
 
                             <div class="col-md-3">Password Baru</div>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 <div class="form-group">
-                                  <div class="input-group input-group-lg mb-3">
+                                  <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ri-lock-line"></i> </span>
                                     </div>
@@ -46,9 +46,9 @@
                             </div>
 
                             <div class="col-md-3">Ulangi Password</div>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 <div class="form-group">
-                                  <div class="input-group input-group-lg mb-3">
+                                  <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ri-lock-line"></i> </span>
                                     </div>
@@ -60,7 +60,7 @@
                             <div class="col-3">
 
                             </div>
-                            <div class="col-9">
+                            <div class="col-7">
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Update Password
                                 </button>

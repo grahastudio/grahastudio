@@ -18,6 +18,15 @@ class User_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function user_dashboard()
+    {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->limit(4);
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     public function user_detail()
     {
@@ -38,12 +47,13 @@ class User_model extends CI_Model
 
     // Dashboard
 
-    public function user_member()
+    public function user_member($limit, $start)
     {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('role_id', 2);
         $this->db->order_by('id', 'DESC');
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query->result();
     }
@@ -57,6 +67,17 @@ class User_model extends CI_Model
         $this->db->order_by('id');
         $query = $this->db->get();
         return $query->row();
+    }
+
+    // Total Row pagination
+    //Total Berita Main Page
+    public function total_row()
+    {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
     }
 
     // GET DATA AUTOCOMPLETE

@@ -81,7 +81,7 @@ class Blog extends CI_Controller
     } else {
         redirect(base_url('blog'));
     }
-      
+
     $category                   = $this->category_model->read($slug_kategori);
     $category_id                = $category->id;
     $category_sidebar           = $this->category_model->get_category_sidebar();
@@ -102,7 +102,7 @@ class Blog extends CI_Controller
 
     $berita                   = $this->berita_model->berita_category($category_id,$limit,$start);
     // End Listing Berita
-    $data = array(  
+    $data = array(
         'title'       => 'Kategori Berita - '.$category->category_name,
         'deskripsi'   => 'Kategori Berita - '.$category->category_name,
         'keywords'    => 'Kategori Berita - '.$category->category_name,

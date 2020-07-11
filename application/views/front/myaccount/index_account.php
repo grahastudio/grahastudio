@@ -17,8 +17,6 @@
 
     <div class="margin-top container">
         <div class="row">
-
-
             <div class="col-md-9">
                 <div class="card">
 
@@ -58,24 +56,43 @@
                                     <div class="col-9">
                                         : <?php echo $user->email; ?>
                                     </div>
-                                    <div class="col-3">
+                                    <?php if ($user->user_phone == NULL) :?>
+
+                                    <?php else:?>
+                                        <div class="col-3">
                                         Phone
                                     </div>
                                     <div class="col-9">
                                         : <?php echo $user->user_phone; ?>
                                     </div>
+                                    <?php endif;?>
+
+                                    <?php if ($user->user_address == NULL) :?>
+
+                                    <?php else:?>
                                     <div class="col-3">
                                         Alamat
                                     </div>
                                     <div class="col-9">
                                         : <?php echo $user->user_address; ?>
                                     </div>
+                                    <?php endif;?>
                                     <div class="col-3">
                                         Tanggal Join
                                     </div>
                                     <div class="col-9">
                                         :  <?php echo date('d F Y', $user->date_created); ?>, Jam <?php echo date('h:i:s A', $user->date_created); ?>
                                     </div>
+
+                                    <?php if ($user->user_phone == NULL) :?>
+
+<?php else:?>
+                                    <div class="alert alert-secondary mt-3">
+                                        <h4>Biografi</h4>
+
+                                    <?php echo $user->user_bio; ?>
+                                    </div>
+<?php endif;?>
 
                                 </div>
 

@@ -79,19 +79,17 @@ $meta      = $this->meta_model->get_meta();
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $('#menu-utama').affix({
         offset: {
             top: 500
         }
     })
-</script>
+</script> -->
 
 <!-- Google Analitycs -->
 <?php echo $meta->google_analytics; ?>
 <!-- End Google Analitycs -->
-
-
 
 
 <!-- SUMMERNOTE -->
