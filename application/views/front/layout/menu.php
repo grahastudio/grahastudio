@@ -35,7 +35,7 @@ $meta           = $this->meta_model->get_meta();
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('myaccount') ?>"><i class="ti-user"></i> My Account</a>
-
+                            <a class="dropdown-item" href="<?php echo base_url('transaksi') ?>"><i class="ri-shopping-bag-line"></i> My Order</a>
                             <a class="dropdown-item" href="<?php echo base_url('myaccount/ubah_password'); ?>"><i class="ti-lock"></i> Ubah Password</a>
                             <div class="dropdown-divider"></div>
                             <?php if ($user->role_id == 1) : ?>

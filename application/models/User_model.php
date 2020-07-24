@@ -51,7 +51,7 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->where('role_id', 2);
+        $this->db->where('role_id', 5);
         $this->db->order_by('id', 'DESC');
         $this->db->limit($limit, $start);
         $query = $this->db->get();

@@ -12,7 +12,7 @@ class Category extends CI_Controller
         $id = $this->session->userdata('id');
         $user = $this->user_model->user_detail($id);
         if ($user->role_id == 2) {
-            redirect('admin/home');
+            redirect('admin/dashboard');
         }
     }
     //Index Category

@@ -14,7 +14,7 @@ class Berita extends CI_Controller
         $id = $this->session->userdata('id');
         $user = $this->user_model->user_detail($id);
         if ($user->role_id == 2) {
-            redirect('admin/home');
+            redirect('admin/dashboard');
         }
     }
     //listing data berita
@@ -77,6 +77,7 @@ class Berita extends CI_Controller
 
 
         $category = $this->category_model->get_category_blog();
+        // Validasi
         $this->form_validation->set_rules(
             'berita_title',
             'Judul Berita',

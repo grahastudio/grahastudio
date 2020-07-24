@@ -23,8 +23,6 @@
 <script src="<?php echo base_url('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/admin/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/admin/js/myscript.min.js') ?>"></script>
-<!-- <script src="<?php echo base_url('assets/admin/js/Chart.js-2.9.3/dist/chart.min.js'); ?>"></script> -->
-
 
 
 <script src="<?php echo base_url('assets/template/js/chosen.jquery.min.js'); ?>"></script>
@@ -50,7 +48,7 @@
 <!-- SUMMERNOTE -->
 <link href="<?php echo base_url('assets/admin/js/summernote/summernote-lite.min.css'); ?>" rel="stylesheet">
 <script src="<?php echo base_url('assets/admin/js/summernote/summernote-lite.min.js'); ?>"></script>
-<script>
+<!-- <script>
     $('#summernote').summernote({
         placeholder: 'Keterangan ..',
         tabsize: 2,
@@ -65,7 +63,26 @@
             ['view', ['fullscreen', 'codeview', 'help']]
         ]
     });
-</script>
+</script> -->
+
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('#summernote').summernote({
+                height: "300px",
+
+            });
+
+
+
+        });
+
+    </script>
+
+
+
+
+<!-- END SUMMERNOTE -->
 
 
 <script src="<?php echo base_url('assets/admin/vendor/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js'); ?>"></script>

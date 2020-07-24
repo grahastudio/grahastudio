@@ -23,15 +23,23 @@ $meta = $this->meta_model->get_meta();
                 <span>Dashboard</span></a>
         </li>
 
-
-
-
-
-
-
         <div class="sidebar-heading">
             MASTER DATA
         </div>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/vector'); ?>">
+                <i class="fa-fw ti-brush-alt text-primary"></i>
+                <span>Vector</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/download'); ?>">
+                <i class="fa-fw ti-cloud-down text-primary"></i>
+                <span>Download</span>
+            </a>
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/berita'); ?>">
@@ -47,12 +55,25 @@ $meta = $this->meta_model->get_meta();
             </a>
         </li>
 
+        <div class="sidebar-heading">
+          TRANSAKSI
+        </div>
 
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/transaksi'); ?>">
+                <i class="fa-fw ti-shopping-cart text-primary"></i>
+                <span>Transaksi</span>
+            </a>
+        </li>
+
+        <div class="sidebar-heading">
+          MANAJEMEN
+        </div>
 
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/user'); ?>">
-                <i class="fa-fw fas fa-users text-primary"></i>
-                <span>User</span>
+                <i class="fa-fw ti-comment-alt text-primary"></i>
+                <span>Member</span>
             </a>
         </li>
 
@@ -63,10 +84,6 @@ $meta = $this->meta_model->get_meta();
             </a>
         </li>
 
-
-        <div class="sidebar-heading">
-            Seting Web
-        </div>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
                 <i class="fas fa-fw fa-cog"></i>

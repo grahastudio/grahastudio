@@ -18,17 +18,25 @@
     <div class="margin-top container">
         <div class="row">
 
+          <div class="col-md-3">
+
+            <?php include "side_menu.php";?>
+
+
+          </div>
 
             <div class="col-md-9">
                 <div class="card">
+                  <div class="card-header order-success">
+                    <i class="ri-user-follow-line"></i> Update Informasi Akun
+                  </div>
 
                     <?php
                     echo form_open_multipart('myaccount/update');
                     ?>
 
                     <div class="card-body">
-                        <h3>Personal Info</h3>
-                        <hr>
+
                         <div class="row">
 
                             <div class="col-3 mb-3">
@@ -149,13 +157,7 @@
             </div>
           </div>
 
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-
-                </div>
-              </div>
-            </div>
+          
 
         </div>
     </div>

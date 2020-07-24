@@ -18,17 +18,24 @@
     <div class="margin-top container">
         <div class="row">
 
+          <div class="col-md-3">
+
+            <?php include "side_menu.php";?>
+
+          </div>
 
             <div class="col-md-9">
                 <div class="card">
+                  <div class="card-header order-success">
+                    <i class="ri-lock-2-line"></i> Ubah Password
+                  </div>
 
                     <?php
                     echo form_open_multipart('myaccount/ubah_password');
                     ?>
 
                     <div class="card-body">
-                        <h2>Ubah Password</h2>
-                        <hr>
+
 
                         <div class="row">
 
@@ -71,14 +78,8 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-
-                </div>
-              </div>
-            </div>
             
+
         </div>
     </div>
 

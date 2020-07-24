@@ -17,36 +17,37 @@ $meta      = $this->meta_model->get_meta();
             <div class="col-12 col-md">
                 <a href="<?php echo base_url(); ?>"><img class="mb-2" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>" alt="" width="250"></a>
                 <span style="font-size:18px;"><br>
-                    <i class="fa fa-phone"></i> <?php echo $meta->telepon ?><br>
-                    <i class="fa fa-envelope"></i> <?php echo $meta->email ?>
+                    <i class="ri-phone-line"></i> <?php echo $meta->telepon ?><br>
+                    <i class="ri-mail-send-line"></i> <?php echo $meta->email ?>
                 </span>
             </div>
             <div class="col-6 col-md ml-md-5">
                 <h5>Produk Utama</h5>
                 <ul class="list-unstyled text-small">
 
-                    <li><a class="text-muted" href="#">Jasa Website</a></li>
-                    <li><a class="text-muted" href="#">Jasa Desain Grafis</a></li>
-                    <li><a class="text-muted" href="#">Jasa Video Animasi</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="#">Jasa Website</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="#">Jasa Desain Grafis</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="#">Jasa Video Animasi</a></li>
 
                 </ul>
             </div>
             <div class="col-5 col-md">
                 <h5>Halaman</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
-                    <li><a class="text-muted" href="<?php echo base_url('contact') ?>">Contact Us</a></li>
-                    <li><a class="text-muted" href="<?php echo base_url('blog') ?>">Blog</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="<?php echo base_url('contact') ?>">Contact Us</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="<?php echo base_url('blog') ?>">Blog</a></li>
+                    <li><i class="ri-arrow-right-s-line"></i> <a class="text-muted" href="<?php echo base_url('transaksi') ?>">Cek Order</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
             <h5>Layanan</h5>
                 <ul class="list-unstyled text-small">
 
-                    <li><a class="text-muted" href="#">Web Application</a></li>
-                    <li><a class="text-muted" href="#">Web System</a></li>
-                    <li><a class="text-muted" href="#">Video Editing</a></li>
-                    <li><a class="text-muted" href="#">Desain Grafis</a></li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> <a class="text-muted" href="#">Web Application</a></li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> <a class="text-muted" href="#">Web System</a></li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> <a class="text-muted" href="#">Video Editing</a></li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> <a class="text-muted" href="#">Desain Grafis</a></li>
 
                 </ul>
             </div>
@@ -75,6 +76,12 @@ $meta      = $this->meta_model->get_meta();
     });
     $('.form-control-chosen').chosen({});
     $('#timepicker').timepicker();
+</script>
+
+<script>
+$(function() {
+  $('#id_tanggal_bayar').datetimepicker({locale:'id', format:'D MMMM YYYY'});
+});
 </script>
 
 
@@ -175,6 +182,8 @@ function scrollFunction() {
     js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+
+  
 
 </body>
 

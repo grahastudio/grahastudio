@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Portfolio extends CI_Controller
+class Bank extends CI_Controller
 {
     //load data
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('portfolio_model');
-        $this->load->model('category_model');
+        $this->load->model('bank_model');
         $this->load->library('pagination');
 
         $id = $this->session->userdata('id');
@@ -17,11 +16,11 @@ class Portfolio extends CI_Controller
             redirect('admin/dashboard');
         }
     }
-    //listing data portfolio
+    //listing data bank
     public function index()
     {
-        $config['base_url']       = base_url('admin/portfolio/index/');
-        $config['total_rows']     = count($this->portfolio_model->total_row());
+        $config['base_url']       = base_url('admin/bank/index/');
+        $config['total_rows']     = count($this->bank_model->total_row());
         $config['per_page']       = 5;
         $config['uri_segment']    = 4;
         // $config['use_page_numbers'] = TRUE;
@@ -59,53 +58,53 @@ class Portfolio extends CI_Controller
         $this->pagination->initialize($config);
 
 
-        $portfolio = $this->portfolio_model->get_portfolio($limit, $start);
+
+
+
+        $bank = $this->bank_model->get_bank($limit, $start);
         $data = [
-            'title'         => 'Data Portfolio',
-            'portfolio'        => $portfolio,
+            'title'         => 'Data Bank',
+            'bank'        => $bank,
             'pagination'    => $this->pagination->create_links(),
-            'content'       => 'admin/portfolio/index_portfolio'
+            'content'       => 'admin/bank/index_bank'
         ];
         $this->load->view('admin/layout/wrapp', $data, FALSE);
     }
-    //Create New Portfolio
+    //Create New Bank
     public function create()
     {
-
-
-        $category = $this->category_model->get_category_portfolio();
+        // Validasi
         $this->form_validation->set_rules(
-            'portfolio_title',
-            'Judul Portfolio',
+            'bank_name',
+            'Nama Bank',
             'required',
             [
-                'required'      => 'Judul Portfolio harus di isi',
+                'required'      => 'Nama Bank harus di isi',
             ]
         );
         $this->form_validation->set_rules(
-            'portfolio_desc',
-            'Deskripsi Portfolio',
+            'bank_number',
+            'Nomor rekening',
             'required',
             [
-                'required'      => 'Deskripsi Portfolio harus di isi',
+                'required'      => 'Nomor rekening harus di isi',
             ]
         );
         if ($this->form_validation->run()) {
 
-            $config['upload_path']          = './assets/img/portfolio/';
-            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['upload_path']          = './assets/img/galery/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg|svg';
             $config['max_size']             = 5000; //Dalam Kilobyte
             $config['max_width']            = 5000; //Lebar (pixel)
             $config['max_height']           = 5000; //tinggi (pixel)
             $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('portfolio_gambar')) {
+            if (!$this->upload->do_upload('bank_logo')) {
 
                 //End Validasi
                 $data = [
-                    'title'                   => 'Tambah Portfolio',
-                    'category'      => $category,
-                    'error_upload'            => $this->upload->display_errors(),
-                    'content'                 => 'admin/portfolio/create_portfolio'
+                    'title'        => 'Tambah Bank',
+                    'error_upload' => $this->upload->display_errors(),
+                    'content'      => 'admin/bank/create_bank'
                 ];
                 $this->load->view('admin/layout/wrapp', $data, FALSE);
 
@@ -119,7 +118,7 @@ class Portfolio extends CI_Controller
                 //lalu gambara Asli di copy untuk versi mini size ke folder assets/upload/image/thumbs
 
                 $config['image_library']    = 'gd2';
-                $config['source_image']     = './assets/img/portfolio/' . $upload_data['uploads']['file_name'];
+                $config['source_image']     = './assets/img/galery/' . $upload_data['uploads']['file_name'];
                 //Gambar Versi Kecil dipindahkan
                 // $config['new_image']        = './assets/img/artikel/thumbs/' . $upload_data['uploads']['file_name'];
                 $config['create_thumb']     = TRUE;
@@ -130,54 +129,41 @@ class Portfolio extends CI_Controller
 
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
-                $slugcode = random_string('numeric', 5);
-                $portfolio_slug  = url_title($this->input->post('portfolio_title'), 'dash', TRUE);
+
                 $data  = [
-                    'user_id'               => $this->session->userdata('id'),
-                    'category_id'           => $this->input->post('category_id'),
-                    'portfolio_slug'        => $slugcode . '-' . $portfolio_slug,
-                    'portfolio_title'       => $this->input->post('portfolio_title'),
-                    'portfolio_desc'        => $this->input->post('portfolio_desc'),
-                    'portfolio_gambar'      => $upload_data['uploads']['file_name'],
-                    'portfolio_status'      => $this->input->post('portfolio_status'),
-                    'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
-                    'date_created'          => time()
+                    'user_id'           => $this->session->userdata('id'),
+                    'bank_name'         => $this->input->post('bank_name'),
+                    'bank_number'       => $this->input->post('bank_number'),
+                    'bank_account'      => $this->input->post('bank_account'),
+                    'bank_branch'       => $this->input->post('bank_branch'),
+                    'bank_logo'         => $upload_data['uploads']['file_name'],
+                    'date_created'      => time()
                 ];
-                $this->portfolio_model->create($data);
-                $this->session->set_flashdata('message', 'Data Portfolio telah ditambahkan');
-                redirect(base_url('admin/portfolio'), 'refresh');
+                $this->bank_model->create($data);
+                $this->session->set_flashdata('message', 'Data Bank telah ditambahkan');
+                redirect(base_url('admin/bank'), 'refresh');
             }
         }
         //End Masuk Database
         $data = [
-            'title'                   => 'Tambah Portfolio',
-            'category'      => $category,
-            'content'                 => 'admin/portfolio/create_portfolio'
+            'title'             => 'Tambah Bank',
+            'content'           => 'admin/bank/create_bank'
         ];
         $this->load->view('admin/layout/wrapp', $data, FALSE);
     }
 
 
-    //Edit Portfolio
+    //Edit Bank
     public function Update($id)
     {
-        $portfolio = $this->portfolio_model->portfolio_detail($id);
-        //Validasi
-        $category = $this->category_model->get_category_portfolio();
+        $bank = $this->bank_model->bank_detail($id);
 
         //Validasi
         $valid = $this->form_validation;
 
         $valid->set_rules(
-            'portfolio_title',
-            'Judul Portfolio',
-            'required',
-            ['required'      => '%s harus diisi']
-        );
-
-        $valid->set_rules(
-            'portfolio_desc',
-            'Isi Portfolio',
+            'bank_name',
+            'Nama Bank',
             'required',
             ['required'      => '%s harus diisi']
         );
@@ -185,23 +171,22 @@ class Portfolio extends CI_Controller
 
         if ($valid->run()) {
             //Kalau nggak Ganti gambar
-            if (!empty($_FILES['portfolio_gambar']['name'])) {
+            if (!empty($_FILES['bank_logo']['name'])) {
 
-                $config['upload_path']          = './assets/img/portfolio/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['upload_path']          = './assets/img/galery/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg|svg';
                 $config['max_size']             = 5000; //Dalam Kilobyte
                 $config['max_width']            = 5000; //Lebar (pixel)
                 $config['max_height']           = 5000; //tinggi (pixel)
                 $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('portfolio_gambar')) {
+                if (!$this->upload->do_upload('bank_logo')) {
 
                     //End Validasi
                     $data = [
-                        'title'                   => 'Edit Portfolio',
-                        'category'                => $category,
-                        'portfolio'               => $portfolio,
-                        'error_upload'            => $this->upload->display_errors(),
-                        'content'                 => 'admin/portfolio/update_portfolio'
+                        'title'             => 'Edit Bank',
+                        'bank'              => $bank,
+                        'error_upload'      => $this->upload->display_errors(),
+                        'content'           => 'admin/bank/update_bank'
                     ];
                     $this->load->view('admin/layout/wrapp', $data, FALSE);
 
@@ -215,7 +200,7 @@ class Portfolio extends CI_Controller
                     //lalu gambar Asli di copy untuk versi mini size ke folder assets/upload/image/thumbs
 
                     $config['image_library']    = 'gd2';
-                    $config['source_image']     = './assets/img/portfolio/' . $upload_data['uploads']['file_name'];
+                    $config['source_image']     = './assets/img/galery/' . $upload_data['uploads']['file_name'];
                     //Gambar Versi Kecil dipindahkan
                     // $config['new_image']        = './assets/img/artikel/thumbs/' . $upload_data['uploads']['file_name'];
                     $config['create_thumb']     = TRUE;
@@ -229,55 +214,50 @@ class Portfolio extends CI_Controller
                     $this->image_lib->resize();
 
                     // Hapus Gambar Lama Jika Ada upload gambar baru
-                    if ($portfolio->portfolio_gambar != "") {
-                        unlink('./assets/img/portfolio/' . $portfolio->portfolio_gambar);
-                        // unlink('./assets/img/artikel/thumbs/' . $portfolio->portfolio_gambar);
+                    if ($bank->bank_logo != "") {
+                        unlink('./assets/img/galery/' . $bank->bank_logo);
+                        // unlink('./assets/img/artikel/thumbs/' . $bank->bank_logo);
                     }
                     //End Hapus Gambar
 
                     $data  = [
-                        'id'                    => $id,
-                        'user_id'               => $this->session->userdata('id'),
-                        'category_id'           => $this->input->post('category_id'),
-                        // 'portfolio_slug'        => url_title($this->input->post('portfolio_title'), 'dash', TRUE),
-                        'portfolio_title'       => $this->input->post('portfolio_title'),
-                        'portfolio_desc'        => $this->input->post('portfolio_desc'),
-                        'portfolio_gambar'      => $upload_data['uploads']['file_name'],
-                        'portfolio_status'      => $this->input->post('portfolio_status'),
-                        'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
-                        'date_updated'          => time()
+                        'id'                => $id,
+                        'user_id'           => $this->session->userdata('id'),
+                        'bank_name'         => $this->input->post('bank_name'),
+                        'bank_number'       => $this->input->post('bank_number'),
+                        'bank_account'      => $this->input->post('bank_account'),
+                        'bank_branch'       => $this->input->post('bank_branch'),
+                        'bank_logo'         => $upload_data['uploads']['file_name'],
+                        'date_updated'      => time()
                     ];
-                    $this->portfolio_model->update($data);
+                    $this->bank_model->update($data);
                     $this->session->set_flashdata('message', 'Data telah di Update');
-                    redirect(base_url('admin/portfolio'), 'refresh');
+                    redirect(base_url('admin/bank'), 'refresh');
                 }
             } else {
-                //Update Portfolio Tanpa Ganti Gambar
+                //Update Bank Tanpa Ganti Gambar
                 // Hapus Gambar Lama Jika ada upload gambar baru
-                if ($portfolio->portfolio_gambar != "")
+                if ($bank->bank_logo != "")
                     $data  = [
                         'id'         => $id,
                         'user_id'           => $this->session->userdata('id'),
-                        'category_id'       => $this->input->post('category_id'),
-                        // 'portfolio_slug'       => url_title($this->input->post('portfolio_title'), 'dash', TRUE),
-                        'portfolio_title'       => $this->input->post('portfolio_title'),
-                        'portfolio_desc'        => $this->input->post('portfolio_desc'),
-                        'portfolio_gambar'      => $upload_data['uploads']['file_name'],
-                        'portfolio_status'      => $this->input->post('portfolio_status'),
-                        'portfolio_keywords'    => $this->input->post('portfolio_keywords'),
-                        'date_updated'          => time()
+                        'bank_name'         => $this->input->post('bank_name'),
+                        'bank_number'       => $this->input->post('bank_number'),
+                        'bank_account'      => $this->input->post('bank_account'),
+                        'bank_branch'       => $this->input->post('bank_branch'),
+                        // 'bank_logo'         => $upload_data['uploads']['file_name'],
+                        'date_updated'      => time()
                     ];
-                $this->portfolio_model->update($data);
+                $this->bank_model->update($data);
                 $this->session->set_flashdata('message', 'Data telah di Update');
-                redirect(base_url('admin/portfolio'), 'refresh');
+                redirect(base_url('admin/bank'), 'refresh');
             }
         }
         //End Masuk Database
         $data = [
-            'title'        => 'Update Portfolio',
-            'category'     => $category,
-            'portfolio'       => $portfolio,
-            'content'          => 'admin/portfolio/update_portfolio'
+            'title'             => 'Update Bank',
+            'bank'              => $bank,
+            'content'           => 'admin/bank/update_bank'
         ];
         $this->load->view('admin/layout/wrapp', $data, FALSE);
     }
@@ -288,16 +268,16 @@ class Portfolio extends CI_Controller
         //Proteksi delete
         is_login();
 
-        $portfolio = $this->portfolio_model->portfolio_detail($id);
+        $bank = $this->bank_model->bank_detail($id);
         //Hapus gambar
 
-        if ($portfolio->portfolio_gambar != "") {
-            unlink('./assets/img/portfolio/' . $portfolio->portfolio_gambar);
-            // unlink('./assets/img/artikel/thumbs/' . $portfolio->portfolio_gambar);
+        if ($bank->bank_logo != "") {
+            unlink('./assets/img/artikel/' . $bank->bank_logo);
+            // unlink('./assets/img/artikel/thumbs/' . $bank->bank_logo);
         }
         //End Hapus Gambar
-        $data = ['id'   => $portfolio->id];
-        $this->portfolio_model->delete($data);
+        $data = ['id'   => $bank->id];
+        $this->bank_model->delete($data);
         $this->session->set_flashdata('message', 'Data telah di Hapus');
         redirect($_SERVER['HTTP_REFERER']);
     }

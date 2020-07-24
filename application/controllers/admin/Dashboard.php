@@ -9,16 +9,10 @@ class Dashboard extends CI_Controller
         $this->load->model('user_model');
         $this->load->model('berita_model');
 
-        $id = $this->session->userdata('id');
-        $user = $this->user_model->user_detail($id);
-        if ($user->role_id == 2) {
-            redirect('admin/home');
-        }
     }
 
     public function index()
     {
-
 
         $list_user              = $this->user_model->user_dashboard();
         $berita                 = $this->berita_model->get_allberita();

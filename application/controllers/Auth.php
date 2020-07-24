@@ -11,6 +11,9 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata('id')) {
+			redirect('myaccount');
+		}
 		$this->form_validation->set_rules(
 			'email',
 			'Email',
@@ -61,7 +64,7 @@ class Auth extends CI_Controller
 					];
 					$this->session->set_userdata($data);
 					if ($user['role_id'] == 1) {
-						redirect('admin/dashboard');
+						redirect('myaccount');
 					} else {
 						redirect('myaccount');
 					}
@@ -84,6 +87,9 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
+		if ($this->session->userdata('id')) {
+			redirect('myaccount');
+		}
 		$this->form_validation->set_rules(
 			'user_name',
 			'Nama',
@@ -131,7 +137,7 @@ class Auth extends CI_Controller
 				'user_image' 	=> 'default.jpg',
 				'user_phone'	=> $this->input->post('user_phone'),
 				'password'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-				'role_id'		=> 2,
+				'role_id'			=> 5,
 				'is_active'		=> 0,
 				'date_created'	=> time()
 			];
@@ -193,6 +199,10 @@ class Auth extends CI_Controller
 	}
 	public function verify()
 	{
+		if ($this->session->userdata('id')) {
+			redirect('myaccount');
+		}
+
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
 
@@ -227,6 +237,9 @@ class Auth extends CI_Controller
 	}
 	public function forgotPassword()
 	{
+		if ($this->session->userdata('id')) {
+			redirect('myaccount');
+		}
 		$this->form_validation->set_rules(
 			'email',
 			'Email',
@@ -267,6 +280,10 @@ class Auth extends CI_Controller
 	}
 	public function resetPassword()
 	{
+		if ($this->session->userdata('id')) {
+			redirect('myaccount');
+		}
+
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
 		$user = $this->db->get_where('user', ['email' => $email])->row_array();

@@ -152,7 +152,7 @@
       <div class="col-lg-3 col-md-4 mt-4">
         <div class="icon-box">
           <i class="ri-quill-pen-line" style="color: #b20969;"></i>
-          <h3><a href="">Vector Art</a></h3>
+          <h3><a href="<?php echo base_url('vector');?>">Vector Art</a></h3>
         </div>
       </div>
 
