@@ -98,8 +98,8 @@
                               <ul>
                                   <li><i class="fas fa-check"></i>5k Searchable messages</li>
                                   <li><i class="fas fa-check"></i> File Jpg dan Master (Cdr, eps, pdf, Jpg)</li>
-                  								<li><i class="fas fa-check"></i> Cetak</li>
-                  								<li><i class="fas fa-check"></i> Bingkai</li>
+                  								<li><i class="fas fa-times text-danger"></i> Cetak</li>
+                  								<li><i class="fas fa-times text-danger"></i> Bingkai</li>
                               </ul>
                               <a href="<?php echo base_url('vector/order/69107-premium');?>" class="plan-btn">ORDER SEKARANG</a>
                           </div>
