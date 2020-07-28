@@ -79,7 +79,7 @@ $user           = $this->user_model->user_detail($id);
               <label class="col-form-label">Email <span class="text-danger">*</span>
               </label>
 
-                <input type="text" class="form-control" name="email" placeholder="Nama Lengkap" value="<?php echo $user->email; ?>">
+                <input type="text" class="form-control" name="email" placeholder="Nama Lengkap" value="<?php echo $user->email; ?>" id="inputemail">
                 <?php echo form_error('email', '<small class="text-danger">', '</small>'); ?>
 
             </div>
@@ -118,7 +118,7 @@ $user           = $this->user_model->user_detail($id);
                 <label class="col-form-label">Email <span class="text-danger">*</span>
                 </label>
 
-                  <input type="text" class="form-control" name="email" placeholder="Nama Lengkap" value="<?php echo set_value('email'); ?>">
+                  <input type="text" class="form-control" name="email" placeholder="Nama Lengkap" value="<?php echo set_value('email'); ?>" id="inputemail">
                   <?php echo form_error('email', '<small class="text-danger">', '</small>'); ?>
 
               </div>

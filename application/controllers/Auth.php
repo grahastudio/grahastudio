@@ -265,8 +265,7 @@ class Auth extends CI_Controller
 
 			  <style type="text/css" media="screen">
 			      @media screen {
-			        td, h1, h2, h3 {
-			          font-family: 'Droid Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+
 			        }
 			      }
 			  </style>
@@ -302,7 +301,7 @@ class Auth extends CI_Controller
 			                  <tr>
 			                    <td style="color:#ffffff;">
 			                    <br>
-			                      '.echo $meta->title.'
+			                      '.$meta->title.'
 			                    </td>
 			                  </tr>
 			                  <tr>
@@ -397,7 +396,7 @@ class Auth extends CI_Controller
 			                    <td style="background-color:#2c3e50;">
 			                    <br>
 			                    <br>
-			                      <span style="color:#ffffff;">Untuk Informasi silahkan Hubungi '.echo $meta->telepon.'</span>
+			                      <span style="color:#ffffff;">Untuk Informasi silahkan Hubungi '.$meta->telepon.'</span>
 			                      <br>
 			                      <br>
 			                    </td>
@@ -544,8 +543,7 @@ class Auth extends CI_Controller
 
 			  <style type="text/css" media="screen">
 			      @media screen {
-			        td, h1, h2, h3 {
-			          font-family: 'Droid Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+
 			        }
 			      }
 			  </style>
@@ -581,7 +579,7 @@ class Auth extends CI_Controller
 			                  <tr>
 			                    <td style="color:#ffffff;">
 			                    <br>
-			                      '.echo $meta->title.'
+			                      '.$meta->title.'
 			                    </td>
 			                  </tr>
 			                  <tr>
@@ -676,7 +674,7 @@ class Auth extends CI_Controller
 			                    <td style="background-color:#2c3e50;">
 			                    <br>
 			                    <br>
-			                      <span style="color:#ffffff;">Untuk Informasi silahkan Hubungi '.echo $meta->telepon.'</span>
+			                      <span style="color:#ffffff;">Untuk Informasi silahkan Hubungi '.$meta->telepon.'</span>
 			                      <br>
 			                      <br>
 			                    </td>

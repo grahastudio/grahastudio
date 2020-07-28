@@ -294,7 +294,9 @@ font-size:30px;
 .form-signup{
   margin-top: 0;
 }
-
+#inputemail{
+  text-transform: lowercase;
+}
 /* Detail Konten */
 .content{
   margin:20px 0 20px 0;
