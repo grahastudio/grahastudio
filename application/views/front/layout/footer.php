@@ -58,12 +58,12 @@ $meta      = $this->meta_model->get_meta();
 <!-- Load javascript Jquery -->
 <script src="<?php echo base_url() ?>assets/template/js/jquery.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>assets/template/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url() ?>assets/template/js/jquery-1.11.3.min.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/template/js/jquery-1.11.3.min.js"></script> -->
 <script src="<?php echo base_url() ?>assets/template/js/chosen.jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/template/assets/js/vendor/popper.min.js"></script>
 <script src="<?php echo base_url() ?>assets/template/js/moment-with-locales.js"></script>
 <script src="<?php echo base_url() ?>assets/template/js/bootstrap-datetimepicker.js"></script>
-<script src="<?php echo base_url() ?>assets/template/js/timepicker.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/template/js/timepicker.js"></script> -->
 
 
 <script>
@@ -183,7 +183,7 @@ function scrollFunction() {
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  
+
 
 </body>
 
