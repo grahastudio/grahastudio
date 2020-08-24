@@ -51,7 +51,6 @@ $user = $this->user_model->user_detail($id);
             <thead class="text-uppercase">
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Kode</th>
                 <th scope="col">Customer</th>
                 <th scope="col">Whatsapp</th>
                 <th scope="col">Produk</th>
@@ -66,7 +65,6 @@ $user = $this->user_model->user_detail($id);
 
                 <tr>
                   <th scope="row"><?php echo $no;?></th>
-                  <td><?php echo $transaksi->transaction_code;?></td>
                   <td><?php echo $transaksi->user_name;?></td>
                   <td><?php echo $transaksi->user_phone;?></td>
                   <td><?php echo $transaksi->product;?></td>
@@ -99,7 +97,7 @@ $user = $this->user_model->user_detail($id);
                   </td>
                 </tr>
 
-              <?php endforeach; $no++;  ?>
+              <?php $no++; endforeach;  ?>
 
               </tbody>
             </table>

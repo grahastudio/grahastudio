@@ -92,11 +92,13 @@
             </div>
             <a class="btn btn-primary" href="<?php echo base_url('admin/transaksi/lunas/' .$transaksi->id);?>">Lunas</a>
 
-          <?php elseif($transaksi->payment_status == "Lunas"):?>
-                Pembayaran Sudah di lunasi
-          <?php endif;?>
 
         </div>
+
+      <?php elseif($transaksi->payment_status == "Lunas"):?>
+          <h3>  Pembayaran Sudah di lunasi</h3><hr>
+            <a class="btn btn-primary" href="<?php echo base_url('admin/transaksi/selesai/' .$transaksi->id);?>">Selesai</a>
+      <?php endif;?>
 
       </div>
     </div>
