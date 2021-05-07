@@ -23,7 +23,7 @@
         </p>
         <p>Graha Studio akan memberikan inovasi dan dapat menjadi konsultan untuk mengembangkan bisnis anda melalui website.</p>
         <p>
-          Jika Bisnis anda saat ini di jalankan dengan cara pemasaran Offline mulailah berkembang dengan layanan yang kami berikan
+          Jika Bisnis anda saat ini di jalankan dengan cara pemasaran Offline mulailah berkembang dengan layanan terbaik yang kami berikan
 
         </p>
       </div>
